@@ -1,9 +1,5 @@
 $(document).on("turbolinks:load", function () {
 
-
-
-
-
 var $Form = $('form'), $Container = $('#container');
 $Container.hide();
 $Form.on('submit', function(p_oEvent){
