@@ -1,26 +1,26 @@
 $(document).on("turbolinks:load", function () {
 
 
+
+
+
+var $Form = $('form'), $Container = $('#container');
+$Container.hide();
+$Form.on('submit', function(p_oEvent){
+    var sUrl, sMovie, oData;
+    p_oEvent.preventDefault();
+sMovie = $Form.find('input').val();
+    sUrl = 'https://www.omdbapi.com/?t=' + sMovie + '&type=movie&tomatoes=true'
+    $.ajax(sUrl, {
+        complete: function(p_oXHR, p_sStatus){
+            oData = $.parseJSON(p_oXHR.responseText);
+            console.log(oData);
+            $Container.find('.title').text(oData.Title);
+            $Container.find('.plot').text(oData.Plot);
+            $Container.find('.poster').html('<img src="' + oData.Poster + '"/>');
+            $Container.find('.year').text(oData.Year);
+            $Container.show();
+        }
+    });    
 });
-
-
-
-$('form[name="search-imdb"]').on("submit", function(e) {
-  var form = $(this);
-  e.preventDefault();
-  $.ajax({
-     url: ""http://www.imdb.com/find?`#{keywords}`",
-     data: form.serialize(), // assuming the form has a hidden input with api_key name, containing your API key
-     crossDomain: true,
-     dataType: "jsonp",
-     success: function(data) {
-       window.console.log(data);
-     }
-     error: handleError
-  });
 });
-
-function handleError (errorThing) {
-  console.log("ERROR!");
-  console.log(errorThing.responseText);
-}
