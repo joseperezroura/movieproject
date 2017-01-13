@@ -9,6 +9,8 @@ var $Container = $('#container');
 
 $Container.hide();
 
+// div hidden
+
 $Form.on('submit', function(p_oEvent){
     var sUrl, sMovie, oData;
     p_oEvent.preventDefault();
@@ -62,8 +64,6 @@ function addMovie( ){
       console.log(err);
 
     }
-
-
   });
 }
 
