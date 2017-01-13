@@ -1,5 +1,9 @@
 $(document).on("turbolinks:load", function () {
 
+$('.js-add-movie').on("click", addMovie);
+
+  var info = {};
+
 var $Form = $('form');
 var $Container = $('#container');
 
@@ -18,6 +22,12 @@ sMovie = $Form.find('input').val();
 
             console.log(oData);
 
+            info.title = oData.Title
+            info.year = oData.Year
+            info.plot = oData.Plot
+            info.poster = oData.Poster
+            info.tomatoURL = oData.tomatoURL
+
             $Container.find('.title').text(oData.Title);
 
             $Container.find('.plot').text(oData.Plot);
@@ -26,10 +36,35 @@ sMovie = $Form.find('input').val();
 
             $Container.find('.year').text(oData.Year);
 
-            $Container.find('.tomatoURL').text(oData.tomatoURL)
+            $('.tomatoURL').text(oData.tomatoURL);
+
+            $('.tomatoURL').attr('href', oData.tomatoURL);
+
 
             $Container.show();
+
+
+// append all the movie info to the movie list on the side of the page
+// add an on click to the movie title in the list so that when you click it, it show the div that is hidden by default
+
         }
     });    
 });
+function addMovie( ){
+  $.ajax({
+    type: "POST",
+    url: "/movies",
+    data: info,
+    success: function(responseText){
+      console.log(responseText);
+    },
+    error: function(err){
+      console.log(err);
+
+    }
+
+
+  });
+}
+
 });
