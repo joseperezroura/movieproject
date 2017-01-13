@@ -13,10 +13,18 @@
  *= require_tree .
  *= require_self
  */
-img{
-	width: 200px;
+.logo{
+	width: 250px;
+	margin-left: 26px;
+	margin-top: 50px;
 }
 
 body {
     background-color: black;
+    color: white;
+}
+
+.btn{
+	color: white;
+	background-color: red;
 }
