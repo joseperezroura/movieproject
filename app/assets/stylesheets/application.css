@@ -14,9 +14,7 @@
  *= require_self
  */
 .logo{
-	width: 250px;
-	margin-left: 26px;
-	margin-top: 50px;
+	width: 800px;
 }
 
 body {
@@ -27,4 +25,7 @@ body {
 .btn{
 	color: white;
 	background-color: red;
+}
+input.form-control.js-form{
+	width: 800px;
 }
