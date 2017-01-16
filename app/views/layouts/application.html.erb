@@ -12,7 +12,23 @@
 
   <body>
   	<div class="container">
+      <header>
       <center><img src="/assets/movie2logo.svg" class="logo"></center>
+      </header>
+      <nav class="navbar-left">
+      <form class="navbar-form" role="search">
+  		<div class="form-group">
+    		<input type="text" name="movie" class="form-control js-form" placeholder="Movie Title">
+  		</div>
+  			<button type="submit" class="btn btn-default js-btn">Search</button>
+	   </form>
+	   </nav>
+	   <nav class="navbar-right">
+
+			<center><h3 class="js-list">Jose's Movie List</h3></center>
+		
+	   </nav>
+
       
     <%= yield %>
   </body>
