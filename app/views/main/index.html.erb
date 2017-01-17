@@ -16,7 +16,12 @@
     	</ul>
     </div>
 </div>
-    
+<h3>Jose's Movie List</h3>
+<ul id="movies">
+	<% @movie.each do |movie| %>
+		<li><%= movie.title %></li>
+	<% end %>
+</ul>
 
     <!-- add a div for your list of movies,
     put n each loop in there to show all the movies in your database -->

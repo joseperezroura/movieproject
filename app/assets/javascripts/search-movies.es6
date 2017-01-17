@@ -6,6 +6,7 @@ $('.js-add-movie').on("click", addMovie);
 
 var $Form = $('form');
 var $Container = $('#container');
+var $Movies = $('#movies');
 
 $Container.hide();
 
@@ -44,6 +45,8 @@ sMovie = $Form.find('input').val();
 
 
             $Container.show();
+
+            $Movies.find('.title').text(oData.title)
 
 
 // append all the movie info to the movie list on the side of the page
