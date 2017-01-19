@@ -2,13 +2,12 @@ $(document).on("turbolinks:load", function () {
 
 $('.js-add-movie').on("click", addMovie);
 
-  var info = {};
-
+var info = {};
 var $Form = $('form');
 var $Container = $('#container');
-var $Movies = $('#movies');
 
-$Container.hide();
+
+$Conainer.hide();
 
 // div hidden
 
@@ -46,7 +45,7 @@ sMovie = $Form.find('input').val();
 
             $Container.show();
 
-            $Movies.find('.title').text(oData.title)
+            $('.js-total-calories').text(new_cal);
 
 
 // append all the movie info to the movie list on the side of the page
