@@ -14,8 +14,8 @@
  *= require_self
  */
 .logo{
-/*	width: 600px;
-*/}
+	width: 600px;
+}
 
 body {
     background-color: black;

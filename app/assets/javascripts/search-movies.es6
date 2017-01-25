@@ -1,6 +1,8 @@
 $(document).on("turbolinks:load", function () {
 
+// this event listener should be inside the form.onsubmit method but only after you disable on the add-move onclick function
 $('.js-add-movie').on("click", addMovie);
+
 
 
 
@@ -11,11 +13,12 @@ var movie = $('#movies')
 
 
 $Container.hide();
-movie.hide();
+
 
 // div hidden
 
 $Form.on('submit', function(p_oEvent){
+
     var sUrl, sMovie, oData;
     p_oEvent.preventDefault();
 
@@ -35,23 +38,15 @@ sMovie = $Form.find('input').val();
             info.tomatoURL = oData.tomatoURL
 
             $Container.find('.title').text(oData.Title);
-
             $Container.find('.plot').text(oData.Plot);
-
             $Container.find('.poster').html('<img src="' + oData.Poster + '"/>');
-
             $Container.find('.year').text(oData.Year);
-
             $('.tomatoURL').text(oData.tomatoURL);
-
             $('.tomatoURL').attr('href', oData.tomatoURL);
-
 
             $Container.show();
 
-
-
-            $('.js-title').append(info.title);
+           
 
             movie.show();
 
@@ -68,7 +63,10 @@ function addMovie( ){
     url: "/movies",
     data: info,
     success: function(responseText){
+    $('.js-title').append(info.title);
+    //append to UL not to LI, also append an li with info.title inside of it
       console.log(responseText);
+      // remove event listener from add-movie button
     },
     error: function(err){
       console.log(err);
