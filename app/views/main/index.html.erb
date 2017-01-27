@@ -4,7 +4,7 @@
 
 
 <div class="row" id="container">
-    <div class="col-sm-6">
+    <div class="col-lg-6">
     	<ul style="list-style: none;">
     		<li><h3 class="title">Title</h3></li>
     		<li><span class="poster img-thumbnail">Poster</span></li>
@@ -20,7 +20,7 @@
 <ul id="movies" style="list-style: none;">
 	<% @movies.each  do |movie| %>
 
-		<li class="js-title"> <%= movie.title %> </li>
+		<li class="js-title">   <button> <%=movie.title%> </button>  </li>
 
 	<% end %>
 </ul>
