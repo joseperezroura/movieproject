@@ -63,7 +63,7 @@ function addMovie( ){
     url: "/movies",
     data: info,
     success: function(responseText){
-    $('.js-title').append(info.title);
+    $('.js-title').append("<li>`#{info.title}`</li>");
     //append to UL not to LI, also append an li with info.title inside of it
       console.log(responseText);
       // remove event listener from add-movie button
