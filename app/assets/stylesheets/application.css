@@ -14,7 +14,8 @@
  *= require_self
  */
 .logo{
-	width: 300px;
+	width: 400px;
+	height: auto;
 }
 
 body {
@@ -25,4 +26,8 @@ body {
 .btn{
 	color: white;
 	background-color: red;
+}
+
+Header {
+	margin-top: 40px;
 }
