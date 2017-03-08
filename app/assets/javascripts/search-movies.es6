@@ -24,7 +24,7 @@ $Form.on('submit', function(p_oEvent){
 
 sMovie = $Form.find('input').val();
     sUrl = 'https://www.omdbapi.com/?t=' + sMovie + '&type=movie&tomatoes=true'
-    
+
     $.ajax(sUrl, {
         complete: function(p_oXHR, p_sStatus){
             oData = $.parseJSON(p_oXHR.responseText);
@@ -46,7 +46,7 @@ sMovie = $Form.find('input').val();
 
             $Container.show();
 
-           
+
 
             movie.show();
 
@@ -55,7 +55,7 @@ sMovie = $Form.find('input').val();
 // add an on click to the movie title in the list so that when you click it, it show the div that is hidden by default
 
         }
-    });    
+    });
 });
 function addMovie( ){
   $.ajax({

@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
 def create
-	movie = Movie.create!( 
+	movie = Movie.create!(
 	   title: params[:title],
        year: params[:year],
        plot: params[:plot],
