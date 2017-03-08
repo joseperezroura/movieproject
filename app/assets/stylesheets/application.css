@@ -31,3 +31,6 @@ body {
 Header {
 	margin-top: 40px;
 }
+input.form-control.js-form{
+	width: 320px;
+}
